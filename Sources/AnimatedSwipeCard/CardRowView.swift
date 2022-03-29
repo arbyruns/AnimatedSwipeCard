@@ -11,15 +11,15 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 public struct CardRowView: View {
-    @State var offset = CGSize.zero
-    @State var rotate = 00.0
-    @State var animationShakeAmount = 5.0 // higher the number the more of an angle of the card
-    @State var swipeScale = 0.8 // default is 0.8 to scale inward
-    @State var animateReminder = false
-    @State var animateShake1 = false
-    @State var animateShake2 = false
+    @State public var offset = CGSize.zero
+    @State public var rotate = 00.0
+    @State public var animationShakeAmount = 5.0 // higher the number the more of an angle of the card
+    @State public var swipeScale = 0.8 // default is 0.8 to scale inward
+    @State public var animateReminder = false
+    @State public var animateShake1 = false
+    @State public var animateShake2 = false
 
-    @State var showAlert = false
+    @State public var showAlert = false
 
     public var body: some View {
         VStack {
