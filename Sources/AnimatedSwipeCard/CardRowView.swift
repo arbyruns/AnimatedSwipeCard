@@ -11,6 +11,8 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 public struct CardRowView: View {
+    public init() {}
+    
     @State public var offset = CGSize.zero
     @State public var rotate = 00.0
     @State public var animationShakeAmount = 5.0 // higher the number the more of an angle of the card
