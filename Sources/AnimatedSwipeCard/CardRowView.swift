@@ -14,6 +14,7 @@ public struct CardRowView: View {
 
     public init(animationShakeAmount: Double) {
         self.animationShakeAmount = animationShakeAmount
+        self.titleText = titleText
     }
 
     @State public var offset = CGSize.zero
@@ -25,6 +26,9 @@ public struct CardRowView: View {
     @State public var animateShake2 = false
 
     @State public var showAlert = false
+
+    @State public var titleText: String = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium"
+    @State public var subText: String = "Subtext"
 
     public var body: some View {
         VStack {
@@ -38,12 +42,12 @@ public struct CardRowView: View {
                             Image("rocket_green")
                                 .resizable()
                                 .frame(width: 50, height: 50, alignment: .center)
-                            Text("Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium")
+                            Text(titleText)
                                 .fontWeight(.semibold)
                         }
                         .padding(.horizontal)
                         HStack {
-                            Text("Subtext")
+                            Text(subText)
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
                             Text("2/22/2022")
