@@ -1,4 +1,4 @@
-![](https://img.shields.io/bower/l/boot)
+![https://github.com/arbyruns/AnimatedSwipeCard/edit/main/README.md#license](https://img.shields.io/bower/l/boot)
 # AnimatedSwipeCard
                                                                                                                                       
 AnimatedSwipeCard is a custom swipe card with animation and can be used with `confirmationDialog` or `alert`.
