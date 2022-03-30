@@ -12,7 +12,7 @@ import SwiftUI
 @available(iOS 14.0, *)
 public struct CardRowView: View {
 
-    public init(animationShakeAmount: Double) {
+    public init(animationShakeAmount: Double, titleText: String) {
         self.animationShakeAmount = animationShakeAmount
         self.titleText = titleText
     }
@@ -139,6 +139,6 @@ public struct CardRowView: View {
 @available(iOS 14.0, *)
 struct CardRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CardRowView(animationShakeAmount: 5.0)
+        CardRowView(animationShakeAmount: 5.0, titleText: "ererere")
     }
 }
