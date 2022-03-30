@@ -115,7 +115,7 @@ public struct CardRowView: View {
                                 showCardAlert = true
                                 animateReminder = true
                                 animateShake1 = true
-                                id = id
+                                id = titleText
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                                     withAnimation {
                                         animateShake1 = false
@@ -138,7 +138,7 @@ public struct CardRowView: View {
                                 showCardAlert = true
                                 animateReminder = true
                                 animateShake2 = true
-                                id = id
+                                id = titleText
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                                     withAnimation {
                                         animateShake2 = false
