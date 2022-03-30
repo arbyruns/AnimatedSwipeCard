@@ -31,7 +31,7 @@ public struct CardRowView: View {
                 titleText: String,
                 subText: String,
                 cardID: String = "",
-                color: String,
+                color: String = "",
                 imageName: String = "",
                 showCardAlert: Binding<Bool>,
                 bindingID: Binding<String>?,
