@@ -21,7 +21,11 @@ public struct CardRowView: View {
     ///   - titleText: Main text
     ///   - subText: subtext
     ///   - color: asset color as a string
-    ///   - image: image name as a string
+    ///   - imageName: image name as a string
+    ///   - showCardAlert: State to show alert
+    ///   - bindingID: pass State to store ID
+    ///   - bindingText: pass State to store text. This maybe the same as titleText
+    ///   - bindingSubText: pass State to store text. This maybe the same as subText
     public init(animationShakeAmount: Double = 5.0,
                 swipeScale: Double = 0.8,
                 titleText: String,
@@ -30,9 +34,9 @@ public struct CardRowView: View {
                 color: String,
                 imageName: String = "rocket_green",
                 showCardAlert: Binding<Bool>,
-                bindingID: Binding<String>,
-                bindingText: Binding<String>,
-                bindingSubText: Binding<String>
+                bindingID: Binding<String>?,
+                bindingText: Binding<String>?,
+                bindingSubText: Binding<String>?
     ) {
         self.animationShakeAmount = animationShakeAmount
         self.swipeScale = swipeScale
@@ -42,9 +46,9 @@ public struct CardRowView: View {
         self.color = color
         self.imageName = imageName
         self._showCardAlert = showCardAlert
-        self._bindingID = bindingID
-        self._bindingText = bindingText
-        self._bindingSubText = bindingSubText
+        self._bindingID = bindingID ?? .constant("")
+        self._bindingText = bindingText ?? .constant("")
+        self._bindingSubText = bindingSubText ?? .constant("")
     }
 
     var titleText: String = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium"
