@@ -33,6 +33,8 @@ public struct CardRowView: View {
                 cardID: String = "",
                 color: String = "",
                 imageName: String = "",
+                imageHeight: CGFloat = 50,
+                imageWidth: CGFloat = 50,
                 showCardAlert: Binding<Bool>,
                 bindingID: Binding<String>?,
                 bindingText: Binding<String>?,
@@ -45,6 +47,8 @@ public struct CardRowView: View {
         self.cardID = cardID
         self.color = color
         self.imageName = imageName
+        self.imageHeight = imageHeight
+        self.imageWidth = imageWidth
         self._showCardAlert = showCardAlert
         self._bindingID = bindingID ?? .constant("")
         self._bindingText = bindingText ?? .constant("")
@@ -57,6 +61,8 @@ public struct CardRowView: View {
     var swipeScale = 0.8 // default is 0.8 to scale inward
     var color = "StatusCard"
     var imageName = "rocket_green"
+    var imageHeight: CGFloat = 50
+    var imageWidth: CGFloat = 50
     var cardID = ""
 
     @State var offset = CGSize.zero
@@ -83,7 +89,7 @@ public struct CardRowView: View {
                             if !imageName.isEmpty{
                                 Image(imageName)
                                     .resizable()
-                                    .frame(width: 50, height: 50, alignment: .center)
+                                    .frame(width: imageWidth, height: imageHeight, alignment: .center)
                             }
                             Text(titleText)
                                 .fontWeight(.semibold)
