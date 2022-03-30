@@ -26,7 +26,7 @@ public struct CardRowView: View {
                 swipeScale: Double = 0.8,
                 titleText: String,
                 subText: String,
-                cardID: String = ""
+                cardID: String = "",
                 color: String,
                 imageName: String = "rocket_green",
                 showCardAlert: Binding<Bool>,
