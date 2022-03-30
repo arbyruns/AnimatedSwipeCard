@@ -54,20 +54,22 @@ struct ContentView: View {
 
 # Parameters
 
-- `animationShakeAmount`: higher the number the more of an angle of the card. Defaults at 5.0
-- `swipeScale`: Scales the card to 0.8 as the default
-- `titleText`: Main text
-- `subText`: subtext
-- `cardID` - `optional`: passed ID
-- `color` - `optional`: asset color as a string 
-- `imageName - `optional`: image name as a string
-- `showCardAlert`: State to show alert
+- `animationShakeAmount` - `optional`: higher the number the more of an angle of the card. Defaults at 5.0
+- `swipeScale` - `optional`: `Double` Scales the card to 0.8 as the default
+- `titleText`: `String` Main text
+- `subText`: `String` subtext
+- `cardID` - `optional`: `String` passed ID
+- `color` - `optional`: `String` asset color as a string 
+- `imageName` - `optional`: `String` image name as a string to be used in card
+- `imageHeight` - `optional`: `CGFloat` image height. Defaults to 50
+- `imageHeight` - `optional`: `CGFloat` image width. Defaults to 50
+- `showCardAlert`: `Bool` State to show alert
 
 Binding parameters can be used with an `alert` or `confirmationDialog`
 
-- `bindingID`: pass State to store ID.
-- `bindingText`: pass State to store text. This maybe the same as titleText
-- `bindingSubText`: pass State to store text. This maybe the same as subText
+- `bindingID`: `String` pass State to store ID.
+- `bindingText`: `String` pass State to store text. This maybe the same as titleText
+- `bindingSubText`: `String` pass State to store text. This maybe the same as subText
 
 ## Example
 
