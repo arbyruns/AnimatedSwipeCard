@@ -3,6 +3,12 @@
 AnimatedSwipeCard is a custom swipe card with animation and can be used with `confirmationDialog` or `alert`.
 
 
+https://user-images.githubusercontent.com/2520545/160837700-916c3355-17c0-4ee8-a86e-b9cd033e4863.mp4
+
+
+
+
+
 # Installation
 
 AnimatedSwipeCard is available through [Swift Package Manager](https://swift.org/package-manager/).
