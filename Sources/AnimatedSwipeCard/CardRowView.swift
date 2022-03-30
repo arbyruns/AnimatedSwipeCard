@@ -26,6 +26,7 @@ public struct CardRowView: View {
                 swipeScale: Double = 0.8,
                 titleText: String,
                 subText: String,
+                cardID: String = ""
                 color: String,
                 imageName: String = "rocket_green",
                 showCardAlert: Binding<Bool>,
@@ -35,6 +36,7 @@ public struct CardRowView: View {
         self.swipeScale = swipeScale
         self.titleText = titleText
         self.subText = subText
+        self.cardID = cardID
         self.color = color
         self.imageName = imageName
         self._showCardAlert = showCardAlert
@@ -47,6 +49,7 @@ public struct CardRowView: View {
     var swipeScale = 0.8 // default is 0.8 to scale inward
     var color = "StatusCard"
     var imageName = "rocket_green"
+    var cardID = ""
 
     @State var offset = CGSize.zero
     @State var rotate = 00.0
@@ -115,7 +118,7 @@ public struct CardRowView: View {
                                 showCardAlert = true
                                 animateReminder = true
                                 animateShake1 = true
-                                id = titleText
+                                id = cardID
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                                     withAnimation {
                                         animateShake1 = false
@@ -138,7 +141,7 @@ public struct CardRowView: View {
                                 showCardAlert = true
                                 animateReminder = true
                                 animateShake2 = true
-                                id = titleText
+                                id = cardID
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                                     withAnimation {
                                         animateShake2 = false
