@@ -1,5 +1,6 @@
+![](https://img.shields.io/bower/l/boot)
 # AnimatedSwipeCard
-
+                                                                                                                                      
 AnimatedSwipeCard is a custom swipe card with animation and can be used with `confirmationDialog` or `alert`.
 
 
@@ -91,3 +92,16 @@ Binding parameters can be used with an `alert` or `confirmationDialog`
             )
         }
 ```
+                                                                                                                                    
+# Credits
+
+Credit to https://lukaszadam.com/ for rocket image
+
+# Author
+
+Rob Evans, robert.evansii@gmail.com
+
+# License
+
+CloudKitStatus is available under the MIT license. See the LICENSE file for more info.
+
