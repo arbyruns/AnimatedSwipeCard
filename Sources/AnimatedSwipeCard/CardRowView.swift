@@ -10,23 +10,42 @@ import SwiftUI
 /// Main card view
 
 @available(iOS 14.0, *)
+
+
+
+
 public struct CardRowView: View {
 
+
+    /// Modifiers accepted
+    /// - Parameters:
+    ///   - animationShakeAmount: higher the number the more of an angle of the card. Defaults at 5.0
+    ///   - swipeScale: Scales the card to 0.8 as the default
+    ///   - titleText: Main text
+    ///   - subText: subtext
+    ///   - color: asset color as a string
+    ///   - image: image name as a string
     public init(animationShakeAmount: Double = 5.0,
                 swipeScale: Double = 0.8,
                 titleText: String,
-                subText: String
+                subText: String,
+                color: String,
+                imageName: String = "rocket_green"
     ) {
         self.animationShakeAmount = animationShakeAmount
         self.swipeScale = swipeScale
         self.titleText = titleText
         self.subText = subText
+        self.color = color
+        self.imageName = imageName
     }
 
     var titleText: String = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium"
     var subText: String = "Subtext"
     var animationShakeAmount = 5.0 // higher the number the more of an angle of the card
     var swipeScale = 0.8 // default is 0.8 to scale inward
+    var color = "StatusCard"
+    var imageName = "rocket_green"
 
     @State var offset = CGSize.zero
     @State var rotate = 00.0
@@ -40,13 +59,13 @@ public struct CardRowView: View {
     public var body: some View {
         VStack {
             RoundedRectangle(cornerRadius: 13)
-                .fill(Color("StatusCard"))
+                .fill(Color(color))
                 .padding(.horizontal)
                 .shadow(radius: 2)
                 .overlay(
                     VStack {
                         HStack {
-                            Image("rocket_green")
+                            Image(imageName)
                                 .resizable()
                                 .frame(width: 50, height: 50, alignment: .center)
                             Text(titleText)
@@ -146,6 +165,6 @@ public struct CardRowView: View {
 @available(iOS 14.0, *)
 struct CardRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CardRowView(animationShakeAmount: 5.0, titleText: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", subText: "subtext")
+        CardRowView(animationShakeAmount: 5.0, titleText: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", subText: "subtext", color: "StatusCard")
     }
 }
