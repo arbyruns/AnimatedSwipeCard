@@ -12,23 +12,30 @@ import SwiftUI
 @available(iOS 14.0, *)
 public struct CardRowView: View {
 
-    public init(animationShakeAmount: Double, titleText: String) {
+    public init(animationShakeAmount: Double = 5.0,
+                swipeScale: Double = 0.8,
+                titleText: String,
+                subText: String
+    ) {
         self.animationShakeAmount = animationShakeAmount
+        self.swipeScale = swipeScale
         self.titleText = titleText
+        self.subText = subText
     }
 
-    @State public var offset = CGSize.zero
-    @State public var rotate = 00.0
-    var animationShakeAmount = 5.0 // higher the number the more of an angle of the card
-    @State public var swipeScale = 0.8 // default is 0.8 to scale inward
-    @State public var animateReminder = false
-    @State public var animateShake1 = false
-    @State public var animateShake2 = false
-
-    @State public var showAlert = false
-
     var titleText: String = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium"
-    @State public var subText: String = "Subtext"
+    var subText: String = "Subtext"
+    var animationShakeAmount = 5.0 // higher the number the more of an angle of the card
+    var swipeScale = 0.8 // default is 0.8 to scale inward
+
+    @State var offset = CGSize.zero
+    @State var rotate = 00.0
+    @State var animateReminder = false
+    @State var animateShake1 = false
+    @State var animateShake2 = false
+
+    @State var showAlert = false
+
 
     public var body: some View {
         VStack {
@@ -139,6 +146,6 @@ public struct CardRowView: View {
 @available(iOS 14.0, *)
 struct CardRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CardRowView(animationShakeAmount: 5.0, titleText: "ererere")
+        CardRowView(animationShakeAmount: 5.0, titleText: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", subText: "subtext")
     }
 }
