@@ -30,7 +30,9 @@ public struct CardRowView: View {
                 color: String,
                 imageName: String = "rocket_green",
                 showCardAlert: Binding<Bool>,
-                id: Binding<String>
+                bindingID: Binding<String>,
+                bindingText: Binding<String>,
+                bindingSubText: Binding<String>
     ) {
         self.animationShakeAmount = animationShakeAmount
         self.swipeScale = swipeScale
@@ -40,7 +42,9 @@ public struct CardRowView: View {
         self.color = color
         self.imageName = imageName
         self._showCardAlert = showCardAlert
-        self._id = id
+        self._bindingID = bindingID
+        self._bindingText = bindingText
+        self._bindingSubText = bindingSubText
     }
 
     var titleText: String = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium"
@@ -58,7 +62,9 @@ public struct CardRowView: View {
     @State var animateShake2 = false
 
     @Binding var showCardAlert: Bool
-    @Binding var id: String
+    @Binding var bindingID: String
+    @Binding var bindingText: String
+    @Binding var bindingSubText: String
 
 
     public var body: some View {
@@ -118,7 +124,9 @@ public struct CardRowView: View {
                                 showCardAlert = true
                                 animateReminder = true
                                 animateShake1 = true
-                                id = cardID
+                                bindingID = cardID
+                                bindingText = titleText
+                                bindingSubText = subText
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                                     withAnimation {
                                         animateShake1 = false
@@ -141,7 +149,9 @@ public struct CardRowView: View {
                                 showCardAlert = true
                                 animateReminder = true
                                 animateShake2 = true
-                                id = cardID
+                                bindingID = cardID
+                                bindingText = titleText
+                                bindingSubText = subText
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                                     withAnimation {
                                         animateShake2 = false
@@ -169,6 +179,6 @@ public struct CardRowView: View {
 @available(iOS 14.0, *)
 struct CardRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CardRowView(animationShakeAmount: 5.0, titleText: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", subText: "subtext", color: "StatusCard", showCardAlert: .constant(false), id: .constant("42"))
+        CardRowView(animationShakeAmount: 5.0, titleText: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", subText: "subtext", color: "StatusCard", showCardAlert: .constant(false), bindingID: .constant("42"), bindingText: .constant(""), bindingSubText: .constant(""))
     }
 }
