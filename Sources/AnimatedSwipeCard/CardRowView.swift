@@ -13,7 +13,14 @@ import SwiftUI
 
 
 
-
+/// Modifiers accepted
+/// - Parameters:
+///   - animationShakeAmount: higher the number the more of an angle of the card. Defaults at 5.0
+///   - swipeScale: Scales the card to 0.8 as the default
+///   - titleText: Main text
+///   - subText: subtext
+///   - color: asset color as a string
+///   - image: image name as a string
 public struct CardRowView: View {
 
 
