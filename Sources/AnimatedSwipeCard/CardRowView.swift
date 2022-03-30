@@ -11,16 +11,6 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 
-
-
-/// Modifiers accepted
-/// - Parameters:
-///   - animationShakeAmount: higher the number the more of an angle of the card. Defaults at 5.0
-///   - swipeScale: Scales the card to 0.8 as the default
-///   - titleText: Main text
-///   - subText: subtext
-///   - color: asset color as a string
-///   - image: image name as a string
 public struct CardRowView: View {
 
 
@@ -37,7 +27,8 @@ public struct CardRowView: View {
                 titleText: String,
                 subText: String,
                 color: String,
-                imageName: String = "rocket_green"
+                imageName: String = "rocket_green",
+                showCardAlert: Binding<Bool>
     ) {
         self.animationShakeAmount = animationShakeAmount
         self.swipeScale = swipeScale
@@ -45,6 +36,7 @@ public struct CardRowView: View {
         self.subText = subText
         self.color = color
         self.imageName = imageName
+        self._showCardAlert = showCardAlert
     }
 
     var titleText: String = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium"
@@ -60,7 +52,7 @@ public struct CardRowView: View {
     @State var animateShake1 = false
     @State var animateShake2 = false
 
-    @State var showAlert = false
+    @Binding var showCardAlert: Bool
 
 
     public var body: some View {
@@ -81,9 +73,6 @@ public struct CardRowView: View {
                         .padding(.horizontal)
                         HStack {
                             Text(subText)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                            Text("2/22/2022")
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
                         }
@@ -120,7 +109,7 @@ public struct CardRowView: View {
                                 offset = .zero
                                 rotate = 1.0
                                 playHaptic(style: "medium")
-                                showAlert = true
+                                showCardAlert = true
                                 animateReminder = true
                                 animateShake1 = true
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
@@ -142,7 +131,7 @@ public struct CardRowView: View {
                                 offset = .zero
                                 rotate = 1.0
                                 playHaptic(style: "medium")
-                                showAlert = true
+                                showCardAlert = true
                                 animateReminder = true
                                 animateShake2 = true
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
@@ -172,6 +161,6 @@ public struct CardRowView: View {
 @available(iOS 14.0, *)
 struct CardRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CardRowView(animationShakeAmount: 5.0, titleText: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", subText: "subtext", color: "StatusCard")
+        CardRowView(animationShakeAmount: 5.0, titleText: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium", subText: "subtext", color: "StatusCard", showCardAlert: .constant(false))
     }
 }
