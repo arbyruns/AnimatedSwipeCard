@@ -58,9 +58,28 @@ struct ContentView: View {
 - `swipeScale`: Scales the card to 0.8 as the default
 - `titleText`: Main text
 - `subText`: subtext
-- `color`: asset color as a string
-- `imageName`: image name as a string
+- `cardID` - `optional`: passed ID
+- `color` - `optional`: asset color as a string 
+- `imageName - `optional`: image name as a string
 - `showCardAlert`: State to show alert
-- `bindingID`: pass State to store ID
+
+Binding parameters can be used with an `alert` or `confirmationDialog`
+
+- `bindingID`: pass State to store ID.
 - `bindingText`: pass State to store text. This maybe the same as titleText
 - `bindingSubText`: pass State to store text. This maybe the same as subText
+
+## Example
+
+```swift
+   .alert(isPresented:$showCardAlert) {
+            Alert(
+                title: Text("Are you sure you want to delete \(bindingText)?"),
+                message: Text("There is no undo"),
+                primaryButton: .destructive(Text("Delete")) {
+                    deleteitem(bindingID)
+                },
+                secondaryButton: .cancel()
+            )
+        }
+```
