@@ -80,9 +80,11 @@ public struct CardRowView: View {
                 .overlay(
                     VStack {
                         HStack {
-                            Image(imageName)
-                                .resizable()
-                                .frame(width: 50, height: 50, alignment: .center)
+                            if !imageName.isEmpty{
+                                Image(imageName)
+                                    .resizable()
+                                    .frame(width: 50, height: 50, alignment: .center)
+                            }
                             Text(titleText)
                                 .fontWeight(.semibold)
                         }
